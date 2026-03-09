@@ -1176,7 +1176,19 @@
   }
   .view-history-btn:hover { background: var(--gray-50); border-color: var(--gray-300); color: var(--gray-800); }
   .view-history-btn svg { width: 13px; height: 13px; opacity: .6; }
-
+  
+/* Request from Applicant */
+  .request-from-applicant-btn {
+    display: flex; align-items: center; gap: 5px;
+    padding: 6px 13px;
+    border: 1px solid var(--gray-200);
+    border-radius: 7px; background: #fff;
+    font-size: 12px; font-weight: 500;
+    color: var(--gray-600); cursor: pointer;
+    font-family: var(--font); transition: all .15s;
+  }
+  .request-from-applicant-btn:hover { background: var(--gray-50); border-color: var(--gray-300); color: var(--gray-800); }
+  .request-from-applicant-btn svg { width: 13px; height: 13px; opacity: .6; }
 
   /* ── FILL STATUS BAR ── */
   .fill-status-bar {
@@ -2916,6 +2928,11 @@
           <button class="view-history-btn" onclick="openHistory('employment')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 1.5"/></svg> View History</button>
           <button class="header-btn" onclick="showToast('Draft saved.')">Save Draft</button>
         </div>
+ 
+        <div class="panel-actions">
+          <button class="request-from-applicant-btn" onclick="openHistory('employment')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2 1.5"/></svg> View History</button>
+          <button class="header-btn" onclick="showToast('Draft saved.')">Save Draft</button>
+        </div>
       </div>
 
       <!-- Fill Status Bar -->
@@ -3865,15 +3882,15 @@
         <span class="cs-toggle-all" onclick="toggleSection('empActions')">Toggle all</span>
       </div>
       <div class="config-item" onclick="toggleItem('emp-call')">
-        <div class="config-item-label" id="lbl-emp-call">Call Employer</div>
+        <div class="config-item-label" id="lbl-emp-call">Send WEB verifications</div>
         <button class="toggle on" id="tog-emp-call"></button>
       </div>
       <div class="config-item" onclick="toggleItem('emp-email')">
-        <div class="config-item-label" id="lbl-emp-email">Email HR Department</div>
+        <div class="config-item-label" id="lbl-emp-email">Send FAX verifactions</div>
         <button class="toggle on" id="tog-emp-email"></button>
       </div>
       <div class="config-item" onclick="toggleItem('emp-fax')">
-        <div class="config-item-label" id="lbl-emp-fax">Send Verification Fax</div>
+        <div class="config-item-label" id="lbl-emp-fax">ETA Status</div>
         <button class="toggle on" id="tog-emp-fax"></button>
       </div>
       <div class="config-item" onclick="toggleItem('emp-billing')">
@@ -3909,15 +3926,19 @@
         <span class="cs-toggle-all" onclick="toggleSection('eduActions')">Toggle all</span>
       </div>
       <div class="config-item" onclick="toggleItem('edu-registrar')">
-        <div class="config-item-label" id="lbl-edu-registrar">Contact Registrar</div>
+        <div class="config-item-label" id="lbl-edu-registrar">Call History</div>
         <button class="toggle on" id="tog-edu-registrar"></button>
       </div>
       <div class="config-item" onclick="toggleItem('edu-transcript')">
-        <div class="config-item-label" id="lbl-edu-transcript">Request Transcript</div>
+        <div class="config-item-label" id="lbl-edu-transcript">Billing Adjustments</div>
         <button class="toggle on" id="tog-edu-transcript"></button>
       </div>
       <div class="config-item" onclick="toggleItem('edu-email')">
-        <div class="config-item-label" id="lbl-edu-email">Email Institution</div>
+        <div class="config-item-label" id="lbl-edu-email">Request a signed release</div>
+        <button class="toggle on" id="tog-edu-email"></button>
+      </div>
+      <div class="config-item" onclick="toggleItem('edu-email')">
+        <div class="config-item-label" id="lbl-edu-email">Fax in Documents</div>
         <button class="toggle on" id="tog-edu-email"></button>
       </div>
     </div>
