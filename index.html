@@ -1833,6 +1833,64 @@
   .rem-cancel-btn:hover { background: var(--gray-50); }
   .rem-move-note { font-size: 11px; color: var(--gray-400); margin-top: 10px; font-style: italic; }
 
+<! Cody 2 start >  
+/* ── RECENT ORDERS (sidebar) ── */
+  .recent-orders-section { margin-top: 8px; }
+  .recent-order-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: background .12s;
+    border-left: 3px solid transparent;
+  }
+  .recent-order-item:hover {
+    background: var(--gray-50);
+    border-left-color: var(--gray-200);
+  }
+  .recent-order-icon {
+    width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+  }
+  .roi-emp  { background: #dbeafe; color: #1e40af; }
+  .roi-crim { background: #fce7f3; color: #9d174d; }
+  .roi-edu  { background: #d1fae5; color: #065f46; }
+  .roi-mvr  { background: #fef3c7; color: #92400e; }
+  .roi-full { background: #ede9fe; color: #5b21b6; }
+  .recent-order-info { flex: 1; min-width: 0; }
+  .recent-order-name {
+    font-size: 12px; font-weight: 600; color: var(--gray-800);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .recent-order-meta {
+    font-size: 10px; color: var(--gray-400);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    margin-top: 1px;
+  }
+  .recent-order-time {
+    font-size: 10px; color: var(--gray-300); white-space: nowrap; flex-shrink: 0;
+  }
+  .recent-orders-empty {
+    padding: 10px 16px; font-size: 11px; color: var(--gray-300); font-style: italic;
+  }
+
+
+  /* ── HEADER BACK BUTTON ── */
+  .header-back-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 12px 5px 10px; border-radius: 7px;
+    background: var(--gray-50); border: 1px solid var(--gray-200);
+    cursor: pointer; font-family: var(--font); transition: all .15s;
+    white-space: nowrap; margin-right: 4px;
+  }
+  .header-back-btn:hover { background: #fff; border-color: var(--primary); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .header-back-btn:hover .back-queue { color: var(--primary); }
+  .back-arrow { font-size: 16px; color: var(--gray-400); line-height: 1; }
+  .header-back-btn:hover .back-arrow { color: var(--primary); }
+  .back-text { display: flex; flex-direction: column; gap: 1px; }
+  .back-label { font-size: 9px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: .08em; line-height: 1; }
+  .back-queue { font-size: 12px; font-weight: 700; color: var(--gray-700); line-height: 1.3; }
+<! Cody 2 end >  
 </style>
 </head>
 <body>
@@ -1995,10 +2053,70 @@
         </div>
       </div>
     </div>
+  <!-- Cody 1 start -->
+<!-- ══ RECENT ORDERS ══ -->
+    <div class="sidebar-divider" style="margin-top:12px;"></div>
+    <div class="recent-orders-section">
+      <div class="sidebar-section-label" style="padding-top:14px;">Recently Viewed</div>
 
+      <div class="recent-order-item" onclick="showToast('Opening RPT-2024-04810...')">
+        <div class="recent-order-icon roi-full">📋</div>
+        <div class="recent-order-info">
+          <div class="recent-order-name">Smith, Wade A.</div>
+          <div class="recent-order-meta">RPT-2024-04810 · Full Package</div>
+        </div>
+        <div class="recent-order-time">2m ago</div>
+      </div>
 
+      <div class="recent-order-item" onclick="showToast('Opening RPT-2024-04808...')">
+        <div class="recent-order-icon roi-crim">🔍</div>
+        <div class="recent-order-info">
+          <div class="recent-order-name">Jones, Sarah M.</div>
+          <div class="recent-order-meta">RPT-2024-04808 · Criminal</div>
+        </div>
+        <div class="recent-order-time">18m ago</div>
+      </div>
+
+      <div class="recent-order-item" onclick="showToast('Opening RPT-2024-04805...')">
+        <div class="recent-order-icon roi-emp">💼</div>
+        <div class="recent-order-info">
+          <div class="recent-order-name">Garcia, Luis R.</div>
+          <div class="recent-order-meta">RPT-2024-04805 · Employment</div>
+        </div>
+        <div class="recent-order-time">1h ago</div>
+      </div>
+
+      <div class="recent-order-item" onclick="showToast('Opening RPT-2024-04801...')">
+        <div class="recent-order-icon roi-edu">🎓</div>
+        <div class="recent-order-info">
+          <div class="recent-order-name">Patel, Anita K.</div>
+          <div class="recent-order-meta">RPT-2024-04801 · Education</div>
+        </div>
+        <div class="recent-order-time">2h ago</div>
+      </div>
+
+      <div class="recent-order-item" onclick="showToast('Opening RPT-2024-04798...')">
+        <div class="recent-order-icon roi-mvr">🚗</div>
+        <div class="recent-order-info">
+          <div class="recent-order-name">Thompson, Derek J.</div>
+          <div class="recent-order-meta">RPT-2024-04798 · MVR</div>
+        </div>
+        <div class="recent-order-time">3h ago</div>
+      </div>
+
+      <div class="recent-order-item" onclick="showToast('Opening RPT-2024-04794...')">
+        <div class="recent-order-icon roi-full">📋</div>
+        <div class="recent-order-info">
+          <div class="recent-order-name">Williams, Tasha N.</div>
+          <div class="recent-order-meta">RPT-2024-04794 · Full Package</div>
+        </div>
+        <div class="recent-order-time">Yesterday</div>
+      </div>
+
+    </div>
+    
   </nav>
-
+  <!-- Cody 1 end -->
   <!-- MAIN -->
   
 <button class="sidebar-toggle-btn" id="sidebarToggle" onclick="toggleSidebar()" title="Toggle sidebar">◀</button>
